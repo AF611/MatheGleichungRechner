@@ -77,6 +77,7 @@ public class Gleichung {
         jPanel.add(ergebnisX);
         jPanel.add(ergebnisY);
 
+
         buttonRechnen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -97,17 +98,31 @@ public class Gleichung {
     }
 
     public void gleichungRechnen(){
-        //Wert für X berechnen
-        x = (e*d)-(f*b) / (d*a)-(c*b);
+        //Werte bekommen
+        a = Integer.parseInt(textFieldA.getText());
+        b = Integer.parseInt(textFieldB.getText());
+        c = Integer.parseInt(textFieldC.getText());
+        d = Integer.parseInt(textFieldD.getText());
+        e = Integer.parseInt(textFieldE.getText());
+        f = Integer.parseInt(textFieldF.getText());
+
+        //Werte für X berechnen
+        x = ((e*d)-(f*b)) / ((d*a)-(c*b));
         //Wert für Y berechnen
-        y = (f*a)-(c*e) / (d*a)-(c*b);
-        ergebnisX.setText("Ho");
-        ergebnisY.setText("Ich bins");
+        y = ((f*a)-(c*e)) / ((d*a)-(c*b));
+        ergebnisX.setText(Integer.toString(x));
+        ergebnisY.setText(Integer.toString(y));
     }
 
     public void gleichungLoeschen(){
         ergebnisX.setText("");
         ergebnisY.setText("");
+        textFieldA.setText("");
+        textFieldB.setText("");
+        textFieldC.setText("");
+        textFieldD.setText("");
+        textFieldE.setText("");
+        textFieldF.setText("");
     }
 
 
