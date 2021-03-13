@@ -115,6 +115,7 @@ public class Gleichung {
     }
 
     public void gleichungLoeschen(){
+        //Zurücksetzen
         ergebnisX.setText("");
         ergebnisY.setText("");
         textFieldA.setText("");
